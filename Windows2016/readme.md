@@ -2,6 +2,7 @@ Install dependencies:
 
 * Vagrant
 * Packer
+* Oracle VirtualBox
 
 Create a box (virtual machine image):
 
@@ -10,7 +11,7 @@ Create a box (virtual machine image):
 
 Add the box to Vagrant:
 
-`vagrant box add windows2016min-virtualbox.box --force --name win2016-primitive`
+`vagrant box add win2016-primitive-virtualbox.box --force --name win2016-primitive`
 
 
 Spin up a virtual machine from the box:
