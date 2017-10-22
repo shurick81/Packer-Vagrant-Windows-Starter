@@ -1,0 +1,10 @@
+Vagrant.configure(2) do |config|
+	config.winrm.transport = :plaintext
+	config.winrm.basic_auth_only = true
+    config.winrm.username = "Fractalsol"
+    config.winrm.password = "Fractalsol"
+    config.vm.box = "win2012r2-primitive"
+    config.vm.provider "virtualbox" do |vb|
+        vb.gui = true
+    end
+end

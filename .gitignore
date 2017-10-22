@@ -1,1 +1,5 @@
 *.iso
+*.ovf
+*.vmdk
+*.vdi
+*.box
