@@ -52,7 +52,7 @@ rm output-virtualbox-iso
 
 Consider also removing downloaded ISO files:
 
-`rm packer_cache`
+`rm packer_cache/*`
 
 
 # Rebuilding
