@@ -1,1 +1,1 @@
-This project is to provide beautifully clean and simple Windows boxes for getting on with Packer and Vagrant. Select windows version and find more documentation within the folder.
+This project is made to provide beautifully clean and simple Windows examples for getting on with Packer and Vagrant. Select windows version and find more documentation within the folder.
