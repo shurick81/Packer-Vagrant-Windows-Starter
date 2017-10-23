@@ -1,8 +1,14 @@
+Hardware requirements:
+* 2GB free RAM
+* 30GB free disk space
+
+
 Install dependencies:
 
 * Vagrant
 * Packer
 * Oracle VirtualBox
+
 
 Create a box (virtual machine image):
 
@@ -33,10 +39,24 @@ Remove box and temp files:
 
 ```
 vagrant box remove win2016-primitive
-rm windows2016-primitive-virtualbox.box
-rm output-virtualbox-iso
+rm win2016-primitive-virtualbox.box
+rm output-virtualbox-iso/*
 ```
 
 Consider also removing downloaded ISO files:
 
 `rm packer_cache`
+
+
+Rebuild:
+
+```
+vagrant destroy --force
+vagrant box remove win2016-primitive
+rm win2016-primitive-virtualbox.box
+rm output-virtualbox-iso/*
+packer build .\win2016-primitive.json
+vagrant box add win2016-primitive-virtualbox.box --force --name win2016-primitive
+vagrant up
+vagrant powershell
+```

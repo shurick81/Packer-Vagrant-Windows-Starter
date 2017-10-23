@@ -121,21 +121,9 @@ This file automates the Windows installation.
             </OOBE>
             <UserAccounts>
                 <AdministratorPassword>
-                    <Value>Fractalsoladm</Value>
+                    <Value>Fractalsol</Value>
                     <PlainText>true</PlainText>
                 </AdministratorPassword>
-                <LocalAccounts>
-                    <LocalAccount wcm:action="add">
-                        <Password>
-                            <Value>Fractalsol</Value>
-                            <PlainText>true</PlainText>
-                        </Password>
-                        <Group>administrators</Group>
-                        <DisplayName>Fractalsol</DisplayName>
-                        <Name>Fractalsol</Name>
-                        <Description>Fractalsol User</Description>
-                    </LocalAccount>
-                </LocalAccounts>
             </UserAccounts>
             <AutoLogon>
                 <Password>
@@ -143,7 +131,7 @@ This file automates the Windows installation.
                     <PlainText>true</PlainText>
                 </Password>
                 <Enabled>true</Enabled>
-                <Username>Fractalsol</Username>
+                <Username>administrator</Username>
             </AutoLogon>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
