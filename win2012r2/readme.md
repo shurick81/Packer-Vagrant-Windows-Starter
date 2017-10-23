@@ -1,17 +1,14 @@
-Hardware requirements:
-
-* 2GB free RAM
-* 26GB free disk space
+# Requirements
+* Hardware
+  * 2GB free RAM
+  * 26GB free disk space
+* Software
+  * Vagrant
+  * Packer
+  * Oracle VirtualBox
 * ~ 30 minutes to run tests
 
-
-Install dependencies:
-
-* Vagrant
-* Packer
-* Oracle VirtualBox
-
-
+# Usage
 Create a box (virtual machine image):
 
 `packer build .\win2012r2-primitive.json`
@@ -26,7 +23,7 @@ Spin up a virtual machine from the box:
 
 `vagrant up`
 
-
+# Verification
 Verify the virtual machine is up and running:
 
 `vagrant powershell`
@@ -38,6 +35,7 @@ ipconfig
 exit
 ```
 
+# Cleaning up
 Remove the virtuatl machine:
 
 `vagrant destroy`
@@ -57,7 +55,7 @@ Consider also removing downloaded ISO files:
 `rm packer_cache`
 
 
-Rebuild:
+# Rebuilding
 ```
 vagrant destroy --force
 vagrant box remove win2012r2-primitive
