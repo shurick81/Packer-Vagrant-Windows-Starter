@@ -6,12 +6,14 @@
             "iso_checksum_type": "md5",
             "iso_url": "http://care.dlservice.microsoft.com/dl/download/1/6/F/16FA20E6-4662-482A-920B-1A45CF5AAE3C/14393.0.160715-1616.RS1_RELEASE_SERVER_EVAL_X64FRE_EN-US.ISO",
             "floppy_files": [
-                "Autounattend.xml",
-                "winrm.ps1"
+                "VirtualBox/Autounattend.xml",
+                "winrm.ps1",
+                "VirtualBox/installadditions.ps1"                
             ],
-            "guest_additions_mode": "disable",
+            "guest_additions_mode": "attach",
             "guest_os_type": "Windows2016_64",
-            "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+            "headless": false,
+            "shutdown_command": "echo",
             "vboxmanage": [
                 [ "modifyvm", "{{.Name}}", "--memory", "2048" ],
                 [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
@@ -24,8 +26,7 @@
     "post-processors": [
         {
           "type": "vagrant",
-          "keep_input_artifact": true,
-          "output": "win2016-primitive-{{.Provider}}.box"
+          "output": "win2016-base-{{.Provider}}.box"
         }
     ]
 }

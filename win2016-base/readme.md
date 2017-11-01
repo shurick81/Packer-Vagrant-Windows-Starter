@@ -11,12 +11,12 @@
 # Usage
 Create a box (virtual machine image):
 
-`packer build .\win2016-primitive.json`
+`packer build win2016-base.json`
 
 
 Add the box to Vagrant:
 
-`vagrant box add win2016-primitive-virtualbox.box --force --name win2016-primitive`
+`vagrant box add win2016-base-virtualbox.box --force --name win2016-base`
 
 
 Spin up a virtual machine from the box:
@@ -44,10 +44,8 @@ Remove the virtuatl machine:
 Remove the box and temp files:
 
 ```
-vagrant box remove win2016-primitive
-rm win2016-primitive-virtualbox.box
-rm output-virtualbox-iso/*
-rm output-virtualbox-iso
+vagrant box remove win2016-base
+rm win2016-base-virtualbox.box
 ```
 
 Consider also removing downloaded ISO files:
@@ -58,11 +56,9 @@ Consider also removing downloaded ISO files:
 # Rebuilding
 ```
 vagrant destroy --force
-vagrant box remove win2016-primitive
-rm win2016-primitive-virtualbox.box
-rm output-virtualbox-iso/*
-rm output-virtualbox-iso
-packer build .\win2016-primitive.json
-vagrant box add win2016-primitive-virtualbox.box --force --name win2016-primitive
+vagrant box remove win2016-base
+rm win2016-base-virtualbox.box
+packer build win2016-base.json
+vagrant box add win2016-base-virtualbox.box --force --name win2016-base
 vagrant up
 ```
