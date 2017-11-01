@@ -46,8 +46,6 @@ Remove the box and temp files:
 ```
 vagrant box remove win2016-primitive
 rm win2016-primitive-virtualbox.box
-rm output-virtualbox-iso/*
-rm output-virtualbox-iso
 ```
 
 Consider also removing downloaded ISO files:
@@ -60,8 +58,6 @@ Consider also removing downloaded ISO files:
 vagrant destroy --force
 vagrant box remove win2016-primitive
 rm win2016-primitive-virtualbox.box
-rm output-virtualbox-iso/*
-rm output-virtualbox-iso
 packer build win2016-primitive.json
 vagrant box add win2016-primitive-virtualbox.box --force --name win2016-primitive
 vagrant up

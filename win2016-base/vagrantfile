@@ -3,7 +3,4 @@ Vagrant.configure(2) do |config|
     config.vm.communicator = "winrm"
     config.winrm.username = "administrator"
     config.winrm.password = "Fractalsol"
-    config.vm.provider "virtualbox" do |v|
-        v.gui = true
-    end
 end

@@ -46,8 +46,6 @@ Remove box and temp files:
 ```
 vagrant box remove win2012r2-primitive
 rm win2012r2-primitive-virtualbox.box
-rm output-virtualbox-iso/*
-rm output-virtualbox-iso
 ```
 
 Consider also removing downloaded ISO files:
@@ -60,8 +58,6 @@ Consider also removing downloaded ISO files:
 vagrant destroy --force
 vagrant box remove win2012r2-primitive
 rm win2012r2-primitive-virtualbox.box
-rm output-virtualbox-iso/*
-rm output-virtualbox-iso
 packer build win2012r2-primitive.json
 vagrant box add win2012r2-primitive-virtualbox.box --force --name win2012r2-primitive
 vagrant up
