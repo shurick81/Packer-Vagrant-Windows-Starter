@@ -5,7 +5,7 @@
 * Software
   * Vagrant
   * Packer
-  * Oracle VirtualBox
+  * Oracle VirtualBox or Hyper-V
 * ~ 30 minutes to run tests
 
 # Usage
@@ -16,7 +16,10 @@ Create a box (virtual machine image):
 
 Add the box to Vagrant:
 
-`vagrant box add win2016-primitive-virtualbox.box --force --name win2016-primitive`
+```
+vagrant box add win2016-primitive-virtualbox.box --force --name win2016-primitive
+vagrant box add win2016-primitive-hyperv.box --force --name win2016-primitive
+```
 
 
 Spin up a virtual machine from the box:
@@ -46,6 +49,7 @@ Remove the box and temp files:
 ```
 vagrant box remove win2016-primitive
 rm win2016-primitive-virtualbox.box
+rm win2016-primitive-hyperv.box
 ```
 
 Consider also removing downloaded ISO files:
@@ -58,7 +62,9 @@ Consider also removing downloaded ISO files:
 vagrant destroy --force
 vagrant box remove win2016-primitive
 rm win2016-primitive-virtualbox.box
+rm win2016-primitive-hyperv.box
 packer build win2016-primitive.json
 vagrant box add win2016-primitive-virtualbox.box --force --name win2016-primitive
+vagrant box add win2016-primitive-hyperv.box --force --name win2016-primitive
 vagrant up
 ```

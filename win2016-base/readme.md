@@ -17,6 +17,7 @@ Create a box (virtual machine image):
 Add the box to Vagrant:
 
 `vagrant box add win2016-base-virtualbox.box --force --name win2016-base`
+`vagrant box add win2016-base-hyperv.box --force --name win2016-base`
 
 
 Spin up a virtual machine from the box:
@@ -46,6 +47,7 @@ Remove the box and temp files:
 ```
 vagrant box remove win2016-base
 rm win2016-base-virtualbox.box
+rm win2016-base-hyperv.box
 ```
 
 Consider also removing downloaded ISO files:
@@ -58,7 +60,9 @@ Consider also removing downloaded ISO files:
 vagrant destroy --force
 vagrant box remove win2016-base
 rm win2016-base-virtualbox.box
+rm win2016-base-hyperv.box
 packer build win2016-base.json
 vagrant box add win2016-base-virtualbox.box --force --name win2016-base
+vagrant box add win2016-base-hyperv.box --force --name win2016-base
 vagrant up
 ```
