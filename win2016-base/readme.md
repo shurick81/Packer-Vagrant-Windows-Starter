@@ -5,7 +5,7 @@
 * Software
   * Vagrant
   * Packer
-  * Oracle VirtualBox
+  * Oracle VirtualBox or Hyper-V
 * ~ 30 minutes to run tests
 
 # Usage
