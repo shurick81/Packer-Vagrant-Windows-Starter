@@ -45,6 +45,10 @@
             "type": "powershell",
             "script": "HyperV/integration.ps1",
             "only": ["hyperv-iso"]
+        },
+        {
+            "type": "powershell",
+            "script": "rdpenable.ps1"
         }
     ],
     "post-processors": [
