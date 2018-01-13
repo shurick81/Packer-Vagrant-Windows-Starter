@@ -16,8 +16,10 @@ Create a box (virtual machine image):
 
 Add the box to Vagrant:
 
-`vagrant box add win2016-base-virtualbox.box --force --name win2016-base`
-`vagrant box add win2016-base-hyperv.box --force --name win2016-base`
+```
+vagrant box add win2016-base-virtualbox.box --force --name win2016-base
+vagrant box add win2016-base-hyperv.box --force --name win2016-base
+```
 
 
 Spin up a virtual machine from the box:
