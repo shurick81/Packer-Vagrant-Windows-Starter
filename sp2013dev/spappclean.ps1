@@ -1,4 +1,4 @@
-$configName = "SPApp"
+$configName = "SPAppClean"
 Configuration $configName
 {
     param(
@@ -6,6 +6,7 @@ Configuration $configName
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
     Import-DscResource -ModuleName xPSDesiredStateConfiguration -Name xRemoteFile -ModuleVersion 8.0.0.0
+    Import-DscResource -ModuleName StorageDsc -ModuleVersion 4.0.0.0
 
     $SPImageLocation = $systemParameters.SPImageLocation
     $SPInstallationMediaPath = $configParameters.SPInstallationMediaPath
@@ -14,15 +15,19 @@ Configuration $configName
     Node $AllNodes.NodeName
     {
 
-        $spImageUrl = "http://care.dlservice.microsoft.com/dl/download/0/0/4/004EE264-7043-45BF-99E3-3F74ECAE13E5/officeserver.img";
-        $SPImageUrl -match '[^/\\&\?]+\.\w{3,4}(?=([\?&].*$|$))' | Out-Null
-        $SPImageFileName = $matches[0]
-        $SPImageDestinationPath = "C:\Install\SP2013R2Image\$SPImageFileName"
+        $SPImageDestinationPath = "C:/Install/SP2013SP1Image/en_sharepoint_server_2013_with_sp1_x64_dvd_3823428.iso"
 
-        xRemoteFile SPServerImageFilePresent
+        MountImage SPServerImageNotMounted
         {
-            Uri             = $SPImageUrl
+            ImagePath   = $SPImageDestinationPath
+            Ensure      = 'Absent'
+        }
+
+        File SPServerImageAbsent {
+            Ensure          = "Absent"
             DestinationPath = $SPImageDestinationPath
+            Force           = $true
+            DependsOn       = "[MountImage]SPServerImageNotMounted"
         }
 
     }
