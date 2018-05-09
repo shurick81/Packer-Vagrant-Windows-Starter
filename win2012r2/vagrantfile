@@ -3,4 +3,5 @@ Vagrant.configure(2) do |config|
     config.vm.communicator = "winrm"
     config.winrm.username = "administrator"
     config.winrm.password = "Fractalsol"
+    config.vm.synced_folder ".", "/vagrant", disabled: true
 end

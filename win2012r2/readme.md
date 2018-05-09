@@ -16,7 +16,10 @@ Create a box (virtual machine image):
 
 Add the box to Vagrant:
 
-`vagrant box add win2012r2-primitive-virtualbox.box --force --name win2012r2-primitive`
+```
+vagrant box add win2012r2-primitive-virtualbox.box --force --name win2012r2-primitive
+vagrant box add win2012r2-primitive-hyperv.box --force --name win2012r2-primitive
+```
 
 
 Spin up a virtual machine from the box:
